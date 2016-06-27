@@ -108,6 +108,8 @@ public final class OAuthTokenCredential {
 	}
 
 	/**
+	 * Pass clientId and secret to OAuthTokenCredential. 
+	 * 
 	 * @param clientID
 	 *            Client ID for the OAuth
 	 * @param clientSecret
@@ -142,7 +144,15 @@ public final class OAuthTokenCredential {
 		this.sdkVersion = new SDKVersionImpl();
 	}
 
-	public OAuthTokenCredential setRefreshToken(String refreshToken) {
+	/**
+	 * Sets refresh token to be used for third party OAuth operations. This is commonly used for 
+	 * third party invoicing and future payments. 
+	 * This method is for internal use only. Please use {@link APIContext#setRefreshToken(String)} for your integration needs.
+	 * 
+	 * @param refreshToken
+	 * @return {@link OAuthTokenCredential}
+	 */
+	OAuthTokenCredential setRefreshToken(String refreshToken) {
 		if (!this.hasCredentials()) {
 			throw new IllegalArgumentException("ClientID and Secret are required. Please use OAuthTokenCredential(String clientID, String clientSecret)");
 		}

@@ -42,7 +42,15 @@ public class APIContext {
 
 	/**
 	 * Default Constructor
-	 * @deprecated Please use `APIContext(String clientID, String clientSecret, String mode)` instead. 
+	 * @deprecated Please use {@link #APIContext(String, String, String)} instead.
+	 * APIContext ideally needs more information than just accessToken to operate correctly. Now, you do not need
+	 * to fetch accessToken from {@link OAuthTokenCredential} separately. Instead, just initialize {@link APIContext} with 
+	 * clientId, clientSecret and mode, with optional configurations, as shown below, and pass the context to paypal API methods:
+	 * <pre>
+	 * {@code
+	 * APIContext context = new APIContext(clientId, clientSecret, "sandbox");
+	 * }
+	 * </pre>
 	 */
 	public APIContext() {
 		super();
@@ -78,8 +86,15 @@ public class APIContext {
 	}
 
 	/**
-	 * APIContext, requestId is auto generated, calling setMaskRequestId(true)
-	 * will override the requestId getter to return null
+	 * @deprecated Please use {@link #APIContext(String, String, String)} instead.
+	 * APIContext ideally needs more information than just accessToken to operate correctly. Now, you do not need
+	 * to fetch accessToken from {@link OAuthTokenCredential} separately. Instead, just initialize {@link APIContext} with 
+	 * clientId, clientSecret and mode, with optional configurations, as shown below, and pass the context to paypal API methods:
+	 * <pre>
+	 * {@code
+	 * APIContext context = new APIContext(clientId, clientSecret, "sandbox");
+	 * }
+	 * </pre>
 	 * 
 	 * @param accessToken
 	 *            OAuthToken required for the call. OAuth token used by the REST
@@ -95,7 +110,15 @@ public class APIContext {
 	}
 
 	/**
-	 * APIContext
+	 * @deprecated Please use {@link #APIContext(String, String, String)} instead.
+	 * APIContext ideally needs more information than just accessToken to operate correctly. Now, you do not need
+	 * to fetch accessToken from {@link OAuthTokenCredential} separately. Instead, just initialize {@link APIContext} with 
+	 * clientId, clientSecret and mode, with optional configurations, as shown below, and pass the context to paypal API methods:
+	 * <pre>
+	 * {@code
+	 * APIContext context = new APIContext(clientId, clientSecret, "sandbox");
+	 * }
+	 * </pre>
 	 * 
 	 * @param accessToken
 	 *            OAuthToken required for the call. OAuth token used by the REST
